@@ -1,6 +1,6 @@
 def decode_message( s: str, p: str) -> bool:
 
-        m = len(message)
+        m = len(s)
         p = len(pattern)
 
         dp = [[False] * (p + 1) for _ in range(m + 1)]
