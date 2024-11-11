@@ -2,7 +2,7 @@ class Solution:
    
     def getTotalIsles(self, grid: list[list[str]]) -> int:
     #    write your code here
-    
+
         if not grid or not grid[0]:
                 return 0
 
@@ -22,7 +22,7 @@ class Solution:
         for r in range(len(grid)):
                 for c in range(len(grid[0])):
                         if grid[r][c] == 'L':
-                        island_count += 1
-                        dfs(r, c)
+                            island_count += 1
+                            dfs(r, c)
 
         return island_count
