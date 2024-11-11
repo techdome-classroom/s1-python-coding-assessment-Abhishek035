@@ -16,8 +16,6 @@ def decode_message( s: str, p: str) -> bool:
             dp[0][j] = dp[0][j - 1];
         }
     }
-
-    // Fill the DP table
     for (let i = 1; i <= m; i++) {
         for (let j = 1; j <= p; j++) {
             if (pattern[j - 1] === '*') {
