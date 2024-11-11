@@ -25,4 +25,3 @@ class Solution:
                         dfs(r, c)
 
         return island_count
-        return 0
