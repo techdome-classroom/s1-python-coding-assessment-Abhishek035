@@ -1,31 +1,31 @@
 def decode_message( s: str, p: str) -> bool:
 
-# write your code here
-        const m = message.length;
-    const p = pattern.length;
+        if not grid or not grid[0]:
+        return 0
 
-    const dp = Array(m + 1).fill(false).map(() => Array(p + 1).fill(false));
+    def dfs(r, c):
+        # If out of bounds or at water, return
+        if r < 0 or r >= len(grid) or c < 0 or c >= len(grid[0]) or grid[r][c] != 'L':
+            return
+        # Mark the current cell as visited
+        grid[r][c] = 'W'
 
-    dp[0][0] = true;
+        # Explore neighboring cells (up, down, left, right)
+        dfs(r - 1, c)  # Up
+        dfs(r + 1, c)  # Down
+        dfs(r, c - 1)  # Left
+        dfs(r, c + 1)  # Right
 
-    for (let j = 1; j <= p; j++) {
-        if (pattern[j - 1] === '*') {
-            dp[0][j] = dp[0][j - 1];
-        }
-    }
-    for (let i = 1; i <= m; i++) {
-        for (let j = 1; j <= p; j++) {
-            if (pattern[j - 1] === '*') {
-                dp[i][j] = dp[i][j - 1] || dp[i - 1][j];
-            } else if (pattern[j - 1] === '?' || pattern[j - 1] === message[i - 1]) {
-                dp[i][j] = dp[i - 1][j - 1];
-            } else {
-                dp[i][j] = false;
-            }
-        }
-    }
+    island_count = 0
 
-    return dp[m][p];
+    for r in range(len(grid)):
+        for c in range(len(grid[0])):
+            if grid[r][c] == 'L':  # Found a new island
+                island_count += 1
+                dfs(r, c)  # Mark all connected land as visited
+
+    return island_count
+
 
   
         return False
