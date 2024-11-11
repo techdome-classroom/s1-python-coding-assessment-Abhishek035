@@ -1,4 +1,4 @@
-def decode_message( message: str, p: str) -> bool:
+def decode_message( message: str, pattern: str) -> bool:
 
         m = len(message)
         p = len(pattern)
