@@ -9,18 +9,18 @@ def decode_message( s: str, p: str) -> bool:
 
                 grid[r][c] = 'W'
 
-        dfs(r - 1, c)  # Up
-        dfs(r + 1, c)  # Down
-        dfs(r, c - 1)  # Left
-        dfs(r, c + 1)  # Right
+        dfs(r - 1, c)
+        dfs(r + 1, c)
+        dfs(r, c - 1)
+        dfs(r, c + 1)
 
         island_count = 0
 
         for r in range(len(grid)):
                 for c in range(len(grid[0])):
-                        if grid[r][c] == 'L':  # Found a new island
+                        if grid[r][c] == 'L':
                         island_count += 1
-                        dfs(r, c)  # Mark all connected land as visited
+                        dfs(r, c)
 
         return island_count
 
