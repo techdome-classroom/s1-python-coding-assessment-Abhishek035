@@ -15,7 +15,7 @@ def decode_message( message: str, pattern: str) -> bool:
                 for j in range(1, p + 1):
                         if pattern[j - 1] == '*':
                                 dp[i][j] = dp[i][j - 1] or dp[i - 1][j]
-                        elif pattern[j - 1] == '?' or pattern[j - 1] == message[i - 1]:
+                        elif pattern[j - 1] == "?" or pattern[j - 1] == message[i - 1]:
                                 dp[i][j] = dp[i - 1][j - 1]
                         else:
                                 dp[i][j] = False
