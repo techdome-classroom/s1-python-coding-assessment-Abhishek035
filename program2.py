@@ -10,7 +10,6 @@ def decode_message( s: str, p: str) -> bool:
         # Mark the current cell as visited
                 grid[r][c] = 'W'
 
-        # Explore neighboring cells (up, down, left, right)
         dfs(r - 1, c)  # Up
         dfs(r + 1, c)  # Down
         dfs(r, c - 1)  # Left
@@ -19,10 +18,10 @@ def decode_message( s: str, p: str) -> bool:
         island_count = 0
 
         for r in range(len(grid)):
-        for c in range(len(grid[0])):
-                if grid[r][c] == 'L':  # Found a new island
-                island_count += 1
-                dfs(r, c)  # Mark all connected land as visited
+                for c in range(len(grid[0])):
+                        if grid[r][c] == 'L':  # Found a new island
+                        island_count += 1
+                        dfs(r, c)  # Mark all connected land as visited
 
         return island_count
 
