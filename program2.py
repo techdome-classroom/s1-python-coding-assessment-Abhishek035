@@ -21,8 +21,3 @@ def decode_message( message: str, pattern: str) -> bool:
                                 dp[i][j] = False
 
         return dp[m][p]
-
-
-
-  
-        # return False
