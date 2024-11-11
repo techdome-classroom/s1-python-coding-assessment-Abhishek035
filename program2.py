@@ -4,7 +4,6 @@ def decode_message( s: str, p: str) -> bool:
         const m = message.length;
     const p = pattern.length;
 
-    // DP table where dp[i][j] will be true if pattern[0..j-1] matches message[0..i-1]
     const dp = Array(m + 1).fill(false).map(() => Array(p + 1).fill(false));
 
     dp[0][0] = true;
