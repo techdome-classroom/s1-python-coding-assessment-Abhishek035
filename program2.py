@@ -4,10 +4,9 @@ def decode_message( s: str, p: str) -> bool:
                 return 0
 
         def dfs(r, c):
-        # If out of bounds or at water, return
                 if r < 0 or r >= len(grid) or c < 0 or c >= len(grid[0]) or grid[r][c] != 'L':
                         return
-        # Mark the current cell as visited
+
                 grid[r][c] = 'W'
 
         dfs(r - 1, c)  # Up
